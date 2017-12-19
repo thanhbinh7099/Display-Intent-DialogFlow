@@ -1,0 +1,59 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.container{
+    margin-top: 10px;
+}
+
+#top h3{
+    padding-top: 15px;
+}
+/* Hiding the checkbox, but allowing it to be focused */
+form{
+    padding-top:10px;
+}
+.badgebox
+{
+    opacity: 0;
+    background: #FFF;
+    color: #000;
+}
+
+.badgebox + .badge
+{
+    /* Move the check mark away when unchecked */
+    text-indent: -999999px;
+    /* Makes the badge's width stay the same checked and unchecked */
+	width: 27px;
+    background: #FFF;
+    color: #000;
+}
+
+.badgebox:focus + .badge
+{
+    /* Set something to make the badge looks focused */
+    /* This really depends on the application, in my case it was: */
+
+    /* Adding a light border */
+    box-shadow: inset 0px 0px 5px;
+    /* Taking the difference out of the padding */
+    background: #FFF;
+    color: #000;
+}
+
+.badgebox:checked + .badge
+{
+    /* Move the check mark back when checked */
+	text-indent: 0;
+    background: #FFF;
+    color: #000;
+}
+
+#main{
+    margin-top: 10px;
+    overflow: auto;
+    height: 100%;
+}
