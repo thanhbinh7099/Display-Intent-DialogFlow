@@ -11,7 +11,7 @@ def index():
 @app.route("/a",methods=['GET', 'POST'])
 def a():
     token = request.form['inputToken']
-    display_options = request.form.getlist('display-options')
+    display_options = request.form.getlist('display-options')           #[event-action,context]
     if len(display_options) == 2:
         link = display_intent(token,"all")
     elif len(display_options) == 1:

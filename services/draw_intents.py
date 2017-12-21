@@ -8,8 +8,7 @@ load_curl = """curl --request GET \
               --header 'authorization: Bearer {token}' \
               --header 'content-type: application/json'"""
 
-# Vẽ sơ đồ đầy đủ
-
+# Vẽ bảng
 def draw_table (model,intent, option):
     name_intent = "#I: " + intent["name"]
     xxx = '{' + name_intent   #Vẽ bảng theo mẫu:  node('Intent','{I:|{E: | A: }|CIs |COs }')
@@ -37,6 +36,8 @@ def draw_table (model,intent, option):
 
     return model
 
+
+#   Nối bảng
 def create_link (model, intent, dialogflow_model_data, option):
     for checked_intent in dialogflow_model_data:
         if checked_intent == intent:
@@ -50,6 +51,7 @@ def create_link (model, intent, dialogflow_model_data, option):
                         else:
                             arr = [(""+intent["id"]+":" +contextOut["name"]+"",""+checked_intent["id"]+":" +check_contextIn_name+"")]
                         model.edges(arr)       #('a:b','c:d')
+
 
     return model
 
